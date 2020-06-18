@@ -102,7 +102,9 @@ def wordfreq(infile, maxwords):
             continue
         if tag in KNOWN_TYPES:
             word = lemmatizer.lemmatize(word.lower(), KNOWN_TYPES[tag])
-            if word in IGNORED_WORDS:
+            while word[0] in ("'", '-'):
+                word = word[1:]
+            if word in IGNORED_WORDS or len(word) < 2:
                 continue
             count[word] = count.get(word, 0) + 1
         elif tag not in new_tags:
