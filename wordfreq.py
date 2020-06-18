@@ -35,6 +35,9 @@ IGNORED_TAGS = {
     '.',                        # Sentence terminators
     '(', ')',                   # Parentheses
     '``', "''",                 # Quotation marks
+    ':',                        # Colon or ellipsis
+    '#',                        # ?
+    'EX',                       # Existential 'there'
     'IN',                       # Prespositions or conjunctions
     'DT',                       # Determiners
     'CC',                       # Conjunctions
@@ -48,11 +51,23 @@ IGNORED_TAGS = {
     'TO',                       # Preposition or infinitive marker
     'RP',                       # Particles
     'POS',                      # Genitive markers
+    'SYM',                      # Symbols
+    'PDT',                      # Pre-determiner
 }
 
 IGNORED_WORDS = {
-    'be',
     '–',                        # En-dash
+    "’", "‘",                   # Single quotation marks
+    '“', '”',                   # Double quotation marks
+    '+', '/', '>',
+    's', "'s", "n't",
+    "½",
+
+    'be', 'i', 'do', 'have', 'not', 'so', 'more', 'also', 'make',
+    'thing', 'get', 'something', 'day', 'really', 'way', 'well',
+    'see', 'find', 'very', 'take', 'want', 'e.g', 'always', 'as',
+    'start', 'bit', 'already', 'put', 'lot', 'then', 'most', 'come',
+    'stay', 'everyday', 'hi', 'just', 'sloth', 'my', 'often',
 }
 
 KNOWN_TYPES = {
@@ -67,6 +82,9 @@ KNOWN_TYPES = {
 
     # Adverbs
     'RB': 'r', 'RBR': 'r', 'RBS': 'r',
+
+    # Foreign words
+    'FW': 'n',
 }
 
 
