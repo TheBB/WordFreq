@@ -122,10 +122,11 @@ def wordfreq(infile, maxwords):
         displwords = ', '.join(words[:maxwords])
         extrawords = max(len(words) - maxwords, 0)
         percentage = num / total * 100
+        total_percentage = num * len(words) / total * 100
         if extrawords == 0:
-            print(f"{percentage:5.1f}% - {num: 3} - {displwords}")
+            print(f"{percentage:5.2f}% - {total_percentage:5.2f}% - {num: 4} - {displwords}")
         else:
-            print(f"{percentage:5.1f}% - {num: 3} - {displwords} and {extrawords} others")
+            print(f"{percentage:5.2f}% - {total_percentage:5.2f}% - {num: 4} - {displwords} and {extrawords} others")
 
 
 if __name__ == '__main__':
